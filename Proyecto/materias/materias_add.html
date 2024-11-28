@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar y Editar Materias</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Materia</title>
 </head>
 <body>
-    
+  <h1>Agregar Materia</h1>
+  <form id="addMateriaForm">
+    <label for="materia">Nombre de la materia:</label>
+    <input type="text" id="materia" required>
+    <button type="submit">Agregar</button>
+  </form>
+ 
+  <div class="add-button-container">
+    <a href="materias_list.html">
+      <button>Ver Lista de Materias</button>
+    </a>
+  <script src="app.js"></script>
 </body>
 </html>
