@@ -139,7 +139,7 @@
         </tbody>
     </table>
 
-    <a href="agregaralumno.html" class="add-alumno-btn">Ir a Agregar Alumno</a>
+    <a href="agregar_add.html" class="add-alumno-btn">Ir a Agregar Alumno</a>
 
     <footer>
         <p>&copy; 2024 - Sistema CRUD de Alumnos | Diseñado con ❤️</p>
@@ -179,12 +179,10 @@
 
         function editAlumno(id) {
             alert(`Función para editar al alumno con ID: ${id}`);
-            // Aquí iría la lógica para editar.
         }
 
-        function assignMaterias(id) {
-            alert(`Función para asignar materias al alumno con ID: ${id}`);
-            // Aquí iría la lógica para asignar materias.
+        function assignMaterias() {
+            location.href = "/materias/materias_add.html";
         }
     </script>
 </body>

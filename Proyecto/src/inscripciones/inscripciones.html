@@ -1,130 +1,278 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripciones a Materias</title>
-    <link href="assets/css/inscripciones.css"></link>
+    <title>Asignar Materias a Alumnos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fb;
             color: #333;
         }
-        form {
+    
+        h1, h2 {
             margin-top: 20px;
+            color: #4a90e2;
+            text-align: center;
         }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+    
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #777;
+            text-align: center;
         }
-        input, select, button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
+    
+        /* Responsivo para el contenedor */
+        .container {
+            max-width: 900px;
+        }
+    
+        .btn-custom {
+            background-color: #4a90e2;
+            color: white;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .btn-custom:hover {
+            background-color: #357abd;
+            transform: translateY(-2px);
+        }
+    
+        /* Estilo para la tabla */
+        .table thead {
+            background-color: #4a90e2;
+            color: white;
+        }
+    
+        .table tbody tr:hover {
+            background-color: #f7f7f7;
+        }
+    
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+    
+        .table td {
+            font-size: 1rem;
+        }
+    
+        /* Estilo para el formulario */
+        .form-label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 8px;
+        }
+    
+        .form-select, .form-control {
             border-radius: 5px;
+            box-shadow: none;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease;
         }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
+    
+        .form-select:focus, .form-control:focus {
+            border-color: #4a90e2;
         }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .table-container {
-            margin-top: 30px;
-        }
-        table {
+    
+        .btn {
             width: 100%;
-            border-collapse: collapse;
+            background-color: #4a90e2;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+    
+        .btn:hover {
+            background-color: #357abd;
+            transform: translateY(-2px);
+        }
+    
+        .mb-4 {
+            margin-bottom: 2rem;
+        }
+    
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+    
+        .btn-block {
+            width: 100%;
+        }
+    
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+    
+            .btn {
+                font-size: 1rem;
+                padding: 10px;
+            }
+    
+            h1 {
+                font-size: 1.5rem;
+            }
+    
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    
+        /* Estilo para el enlace de "Agregar" */
+        .add-button-container {
             margin-top: 20px;
         }
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
+    
+        .add-button-container a {
+            width: 100%;
+            display: inline-block;
+            padding: 12px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
         }
-        table th {
-            background-color: #007BFF;
-            color: white;
+    
+        /* Asegurar que las tablas sean responsivas en dispositivos pequeños */
+        .table-responsive {
+            overflow-x: auto;
+        }
+    
+        .form-group {
+            margin-bottom: 1rem;
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Inscripción de Alumnos</h1>
-        <form id="inscripcionForm">
-            <label for="nombreAlumno">Nombre del Alumno:</label>
-            <input type="text" id="nombreAlumno" placeholder="Ingrese el nombre del alumno" required>
-
-            <label for="materia">Seleccione una Materia:</label>
-            <select id="materia" required>
-                <option value="">Seleccione una materia</option>
-                <option value="Matemáticas">Matemáticas</option>
-                <option value="Ciencias">Ciencias</option>
-                <option value="Historia">Historia</option>
-                <option value="Inglés">Inglés</option>
-            </select>
-
-            <button type="submit">Inscribir Alumno</button>
-        </form>
-
-        <div class="table-container">
-            <h2>Alumnos Inscritos</h2>
-            <table id="tablaAlumnos">
-                <thead>
-                    <tr>
-                        <th>Nombre del Alumno</th>
-                        <th>Materia</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                </tbody>
-            </table>
+    
+    <body>
+        <div class="container">
+            <h1>Asignar Materia a Alumno</h1>
+            <form id="assignForm">
+                <div class="form-group mb-4">
+                    <label for="alumno" class="form-label">Seleccionar Alumno:</label>
+                    <select id="alumno" class="form-select" required>
+                        <option value="" disabled selected>Selecciona un alumno</option>
+                    </select>
+                </div>
+                <div class="add-button-container text-center mt-3">
+                    <a href="/alumnos/alumnos_add.html" class="btn btn-primary">
+                        Agregar Nuevo Alumno
+                    </a>
+                </div>
+    
+                <div class="form-group mb-4">
+                    <label for="materia" class="form-label">Seleccionar Materia:</label>
+                    <select id="materia" class="form-select" required>
+                        <option value="" disabled selected>Selecciona una materia</option>
+                    </select>
+                </div>
+                <div class="add-button-container text-center mt-3">
+                    <a href="/materias/materias_add.html" class="btn btn-primary">
+                        Agregar nueva materia
+                    </a>
+                </div>
+                <button type="submit" class="btn btn-success mt-3">Asignar</button>
+            </form>
+    
+            <h2 class="mt-4">Asignaciones</h2>
+    
+            <div class="table-responsive">
+                <table class="table table-bordered mt-4">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>ID Alumno</th>
+                            <th>Nombre del Alumno</th>
+                            <th>Materia</th>
+                        </tr>
+                    </thead>
+                    <tbody id="asignacionesTabla">
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-
-    <script type="text/javascript" src="assets/js/inscripciones.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const form = document.getElementById('inscripcionForm');
-        const tablaAlumnos = document.getElementById('tablaAlumnos').querySelector('tbody');
+        const getLocalData = (key) => JSON.parse(localStorage.getItem(key)) || [];
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
+        const loadOptions = () => {
+            const alumnos = getLocalData("alumnos");
+            const materias = getLocalData("materias");
 
-            const nombreAlumno = document.getElementById('nombreAlumno').value;
-            const materia = document.getElementById('materia').value;
+            const alumnoSelect = document.getElementById("alumno");
+            const materiaSelect = document.getElementById("materia");
 
-            if (nombreAlumno && materia) {
-                const row = tablaAlumnos.insertRow();
-                const cellNombre = row.insertCell(0);
-                const cellMateria = row.insertCell(1);
+            alumnoSelect.innerHTML = '<option value="" disabled selected>Selecciona un alumno</option>';
+            materiaSelect.innerHTML = '<option value="" disabled selected>Selecciona una materia</option>';
 
-                cellNombre.textContent = nombreAlumno;
-                cellMateria.textContent = materia;
+            alumnos.forEach(alumno => {
+                const option = document.createElement("option");
+                option.value = alumno.id;
+                option.textContent = alumno.nombre;
+                alumnoSelect.appendChild(option);
+            });
 
-                form.reset();
-            } else {
-                alert('Por favor, complete todos los campos.');
+            materias.forEach(materia => {
+                const option = document.createElement("option");
+                option.value = materia;
+                option.textContent = materia;
+                materiaSelect.appendChild(option);
+            });
+        };
+
+        const loadAsignacionesTabla = () => {
+            const asignaciones = getLocalData("asignaciones");
+            const alumnos = getLocalData("alumnos");
+            const tabla = document.getElementById("asignacionesTabla");
+
+            tabla.innerHTML = "";
+
+            asignaciones.forEach(asignacion => {
+                const alumno = alumnos.find(a => a.id === parseInt(asignacion.alumnoId, 10));
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${asignacion.alumnoId}</td>
+                    <td>${alumno ? alumno.nombre : "Desconocido"}</td>
+                    <td>${asignacion.materia}</td>
+                `;
+                tabla.appendChild(row);
+            });
+        };
+
+        document.getElementById("assignForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const alumnoId = document.getElementById("alumno").value;
+            const materia = document.getElementById("materia").value;
+
+            if (!alumnoId || !materia) {
+                alert("Por favor selecciona un alumno y una materia.");
+                return;
             }
+
+            let asignaciones = getLocalData("asignaciones");
+
+            asignaciones.push({ alumnoId, materia });
+            localStorage.setItem("asignaciones", JSON.stringify(asignaciones));
+
+            alert("Materia asignada correctamente.");
+            this.reset();
+            loadAsignacionesTabla(); 
         });
+
+        loadOptions();
+        loadAsignacionesTabla();
     </script>
 </body>
 </html>

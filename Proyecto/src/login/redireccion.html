@@ -33,22 +33,6 @@
             border-radius: 10px;
         }
 
-        form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #555;
-        }
-
-        form input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 20px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            transition: border-color 0.3s ease;
-        }
 
         form input:focus {
             border-color: #4a90e2;
@@ -100,34 +84,14 @@
     </style>
 </head>
 <body>
-    <h1>Agregar Nuevo Alumno</h1>
-    <form id="alumnoForm">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required placeholder="Ingresa el nombre del alumno">
-    
-        <button type="submit">Guardar Alumno</button>
-    </form>
+    <h1>¿Quieres agregar alumno o una materia?</h1>
     
     <a href="/alumnos/alumnos_list.html" class="manage-btn">Ir a Gestionar Alumnos</a>
-
+    <a href="/materias/materias_list.html" class="manage-btn">Ir a Gestionar Materias</a>
+    <a href="/inscripcion/inscripciones.html" class="manage-btn">Agregar alumno a materias</a>
     <footer>
         <p>&copy; 2024 - Sistema CRUD de Alumnos | Diseñado con ❤️</p>
     </footer>
-
-    <script>
-        document.getElementById("alumnoForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            const nombre = document.getElementById("nombre").value;
-         
-
-            const newAlumno = { id: Date.now(), nombre };
-            let alumnos = JSON.parse(localStorage.getItem("alumnos")) || [];
-            alumnos.push(newAlumno);
-            localStorage.setItem("alumnos", JSON.stringify(alumnos));
-            alert("Alumno agregado exitosamente");
-            this.reset();
-        });
-    </script>
 </body>
 </html>
 
