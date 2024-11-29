@@ -4,8 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripciones a Materias</title>
+    <link href="assets/css/inscripciones.css"></link>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .table-container {
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Inscripción de Alumnos</h1>
+        <form id="inscripcionForm">
+            <label for="nombreAlumno">Nombre del Alumno:</label>
+            <input type="text" id="nombreAlumno" placeholder="Ingrese el nombre del alumno" required>
+
+            <label for="materia">Seleccione una Materia:</label>
+            <select id="materia" required>
+                <option value="">Seleccione una materia</option>
+                <option value="Matemáticas">Matemáticas</option>
+                <option value="Ciencias">Ciencias</option>
+                <option value="Historia">Historia</option>
+                <option value="Inglés">Inglés</option>
+            </select>
+
+            <button type="submit">Inscribir Alumno</button>
+        </form>
+
+        <div class="table-container">
+            <h2>Alumnos Inscritos</h2>
+            <table id="tablaAlumnos">
+                <thead>
+                    <tr>
+                        <th>Nombre del Alumno</th>
+                        <th>Materia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/js/inscripciones.js"></script>
+    <script>
+        const form = document.getElementById('inscripcionForm');
+        const tablaAlumnos = document.getElementById('tablaAlumnos').querySelector('tbody');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nombreAlumno = document.getElementById('nombreAlumno').value;
+            const materia = document.getElementById('materia').value;
+
+            if (nombreAlumno && materia) {
+                const row = tablaAlumnos.insertRow();
+                const cellNombre = row.insertCell(0);
+                const cellMateria = row.insertCell(1);
+
+                cellNombre.textContent = nombreAlumno;
+                cellMateria.textContent = materia;
+
+                form.reset();
+            } else {
+                alert('Por favor, complete todos los campos.');
+            }
+        });
+    </script>
 </body>
 </html>
