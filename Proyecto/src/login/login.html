@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela "LK"</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <img class="header-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgyS_rYb66dmsPsTmzl7enOqiA6ZWntK9RXU4ELVfvaYgTPww9aqZR4kgvCRpzkcZsM2c&usqp=CAU" alt="Plataforma de Alumnos">
+            <h1 class="title">Bienvenido!!</h1>
+            <p class="subtitle">Inicia sesión con tu Cuenta</p>
+            <form id="loginForm" class="form">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" placeholder="Ingresa tu usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <button type="submit" class="btn">Iniciar Sesión</button>
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/login.js">
+        
+    </script>
+</body>
+</html>
