@@ -5,124 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestionar Alumnos</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7fb;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 {
-            margin-top: 20px;
-            font-size: 2.5rem;
-            color: #4a90e2;
-        }
-
-        table {
-            width: 90%;
-            max-width: 1000px;
-            margin: 20px auto;
-            border-collapse: collapse;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 15px;
-            text-align: left;
-            font-size: 1rem;
-        }
-
-        th {
-            background-color: #4a90e2;
-            color: white;
-            text-transform: uppercase;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        td {
-            color: #555;
-        }
-
-        .actions {
-            display: flex;
-            justify-content: flex-end; /* Alinea los botones a la derecha */
-            gap: 5px; /* Espaciado entre botones */
-        }
-
-        button {
-            padding: 5px 10px; /* Tamaño más pequeño */
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 0.8rem; /* Fuente más pequeña */
-            font-weight: 600;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-
-        button.edit {
-            background-color: #7ad221;
-            color: white;
-        }
-
-        button.edit:hover {
-            background-color: #5eab1c;
-        }
-
-        button.delete {
-            background-color: #ff4d4d;
-            color: white;
-        }
-
-        button.delete:hover {
-            background-color: #cc0000;
-        }
-
-        button.assign {
-            background-color: #f4a742;
-            color: white;
-        }
-
-        button.assign:hover {
-            background-color: #e68a23;
-        }
-
-        .add-alumno-btn {
-            display: inline-block;
-            margin: 30px auto;
-            padding: 12px 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: white;
-            background-color: #4a90e2;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .add-alumno-btn:hover {
-            background-color: #357abd;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            margin: 20px 0;
-            font-size: 0.9rem;
-            color: #777;
-        }
-    </style>
+    <link href="assets/css/alumnos.css" rel="stylesheet">
 </head>
 <body>
     <h1>Gestionar Alumnos</h1>
@@ -135,56 +18,15 @@
             </tr>
         </thead>
         <tbody id="alumnosTable">
-            <!-- Los datos se llenarán dinámicamente -->
         </tbody>
     </table>
 
-    <a href="agregar_add.html" class="add-alumno-btn">Ir a Agregar Alumno</a>
+    <a href="alumnos_add.html" class="add-alumno-btn">Ir a Agregar Alumno</a>
 
     <footer>
         <p>&copy; 2024 - Sistema CRUD de Alumnos | Diseñado con ❤️</p>
     </footer>
-
-    <script>
-        let alumnos = JSON.parse(localStorage.getItem("alumnos")) || [];
-
-        function renderTable() {
-            const tableBody = document.getElementById("alumnosTable");
-            tableBody.innerHTML = "";
-            alumnos.forEach(alumno => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
-                    <td>${alumno.nombre}</td>
-                    <td>
-                        <div class="actions">
-                            <button class="edit" onclick="editAlumno(${alumno.id})">Editar</button>
-                            <button class="delete" onclick="deleteAlumno(${alumno.id})">Eliminar</button>
-                            <button class="assign" onclick="assignMaterias(${alumno.id})">Asignar</button>
-                        </div>
-                    </td>
-                `;
-                tableBody.appendChild(row);
-            });
-        }
-
-        renderTable();
-
-        function deleteAlumno(id) {
-            if (confirm("¿Estás seguro de que deseas eliminar este alumno?")) {
-                alumnos = alumnos.filter(a => a.id != id);
-                localStorage.setItem("alumnos", JSON.stringify(alumnos));
-                renderTable();
-            }
-        }
-
-        function editAlumno(id) {
-            alert(`Función para editar al alumno con ID: ${id}`);
-        }
-
-        function assignMaterias() {
-            location.href = "/materias/materias_add.html";
-        }
-    </script>
+    <script src="assets/js/alumnos.js" type="text/javascript"></script>
 </body>
 </html>
 

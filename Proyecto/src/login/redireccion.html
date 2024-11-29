@@ -5,90 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Alumno</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7fb;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 {
-            margin-top: 20px;
-            font-size: 2.5rem;
-            color: #4a90e2;
-        }
-
-        form {
-            width: 90%;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            background: #fff;
-            border-radius: 10px;
-        }
-
-
-        form input:focus {
-            border-color: #4a90e2;
-            outline: none;
-        }
-
-        form button {
-            width: 100%;
-            background-color: #4a90e2;
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        form button:hover {
-            background-color: #357abd;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            margin: 30px 0;
-            font-size: 0.9rem;
-            color: #777;
-            text-align: center;
-        }
-
-        .manage-btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 20px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #4a90e2;
-            border: 2px solid #4a90e2;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .manage-btn:hover {
-            background-color: #4a90e2;
-            color: white;
-        }
-    </style>
+    <link href="assets/css/redireccion.css" rel="stylesheet">
 </head>
 <body>
     <h1>¿Quieres agregar alumno o una materia?</h1>
     
     <a href="/alumnos/alumnos_list.html" class="manage-btn">Ir a Gestionar Alumnos</a>
     <a href="/materias/materias_list.html" class="manage-btn">Ir a Gestionar Materias</a>
-    <a href="/inscripcion/inscripciones.html" class="manage-btn">Agregar alumno a materias</a>
+    <a href="/inscripciones/inscripciones.html" class="manage-btn">Agregar alumno a materias</a>
     <footer>
         <p>&copy; 2024 - Sistema CRUD de Alumnos | Diseñado con ❤️</p>
     </footer>

@@ -1,0 +1,140 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+}
+
+h1, h2 {
+    margin-top: 20px;
+    color: #4a90e2;
+    text-align: center;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #777;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+}
+
+.btn-custom {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+
+.table thead {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f7f7f7;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table td {
+    font-size: 1rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-select, .form-control {
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: #4a90e2;
+}
+
+.btn {
+    width: 100%;
+    background-color: #4a90e2;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+}
+
+.add-button-container {
+    margin-top: 20px;
+}
+
+.add-button-container a {
+    width: 100%;
+    display: inline-block;
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
