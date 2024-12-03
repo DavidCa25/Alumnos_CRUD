@@ -6,17 +6,22 @@
     <title>Agregar Alumno</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link href="assets/css/alumnos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Agregar Nuevo Alumno</h1>
     <form id="alumnoForm">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" required placeholder="Ingresa el nombre del alumno">
-    
-        <button type="submit">Guardar Alumno</button>
+        <div class="form-actions">
+        <button type="submit" class="manage-btn">
+            <i class="fas fa-user"></i>  Guardar alumno
+        </button>
+        <a href="/alumnos/alumnos_list.html" class="manage-btn">
+            <i class="fas fa-users"></i> Ver Alumnos
+        </a>
+        </div>
     </form>
     
-    <a href="/alumnos/alumnos_list.html" class="manage-btn">Ir a Gestionar Alumnos</a>
 
     <footer>
         <p>&copy; 2024 - Sistema CRUD de Alumnos | Diseñado con ❤️</p>
