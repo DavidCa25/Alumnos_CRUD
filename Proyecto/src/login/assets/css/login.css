@@ -44,7 +44,6 @@ body {
     color: #555;
 }
 
-/* Form */
 .form {
     width: 100%;
 }
@@ -62,7 +61,7 @@ body {
 }
 
 .form-group input {
-    width: 100%;
+    width: 93%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -88,7 +87,8 @@ body {
 }
 
 .btn:hover {
-    background-color: #376bb0;
+    background-color: #4a90e2;
+    color: #fff;
 }
 
 .error-message {
@@ -97,5 +97,3 @@ body {
     color: red;
     display: none;
 }
-
-
